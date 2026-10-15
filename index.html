@@ -81,3 +81,4 @@
   const grip=$('resizeGrip');let resizeStart=null;grip.addEventListener('pointerdown',e=>{e.preventDefault();e.stopPropagation();const r=remote.getBoundingClientRect();resizeStart={x:e.clientX,y:e.clientY,w:r.width,h:r.height};grip.setPointerCapture(e.pointerId)});grip.addEventListener('pointermove',e=>{if(!resizeStart)return;const p=player.getBoundingClientRect();remote.style.width=Math.max(280,Math.min(p.width-14,resizeStart.w+e.clientX-resizeStart.x))+'px';remote.style.height=Math.max(135,Math.min(p.height-14,resizeStart.h+e.clientY-resizeStart.y))+'px'});grip.addEventListener('pointerup',()=>resizeStart=null);grip.addEventListener('pointercancel',()=>resizeStart=null);
 })();
 </script></body></html>
+<!-- rebuild -->
